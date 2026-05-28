@@ -10,6 +10,8 @@ This project models a realistic fulfillment loop:
 
 It supports multiple dispatch strategies (**MILP / Nearest-Neighbor / Greedy fallback**) and provides both visualization and experiment logs.
 
+https://github.com/user-attachments/assets/5b7dc59c-6c4b-4978-b575-e3caa308c351
+
 ---
 
 ## 🌍 Why this project matters
@@ -55,7 +57,7 @@ delivery_modular/
     milp.py                # MILP assignment (PuLP-backed)
 
 run_modular_sim.py         # single entrypoint script
-test_2.py                  # original monolithic reference file
+make_icons.py              # one-off script to regenerate icon PNGs
 ```
 
 ---
@@ -172,7 +174,7 @@ Adjust runtime behavior in `delivery_modular/sim_config.py`:
 ## 📝 Notes
 
 - If PuLP is missing, MILP mode is skipped and fallback logic handles assignments.
-- Icon paths (`car.png`, `del.png`, `shop.png`) are optional; rendering has graceful fallback shapes.
+- Icon files (`car.png`, `del.png`, `shop.png`) are included. To regenerate them, run `python make_icons.py`.
 - For long experiments, prefer `headless=True` in config for improved performance.
 
 ---
@@ -188,4 +190,4 @@ Adjust runtime behavior in `delivery_modular/sim_config.py`:
 
 ## 📄 License
 
-Add a license file (e.g., MIT) before public release on GitHub.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

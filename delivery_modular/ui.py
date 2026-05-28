@@ -61,10 +61,11 @@ class UI:
                 )
 
         shop_pixel = self.pathfinder.to_pixel(shop_location)
+        sx, sy = int(shop_pixel[0]), int(shop_pixel[1])
         if self.shop_img is not None:
-            self.screen.blit(self.shop_img, (shop_pixel[0] - 35, shop_pixel[1] - 35))
+            self.screen.blit(self.shop_img, (sx - 35, sy - 35))
         else:
-            pygame.draw.rect(self.screen, (160, 200, 255), (shop_pixel[0] - 35, shop_pixel[1] - 35, 70, 70))
+            pygame.draw.rect(self.screen, (160, 200, 255), (sx - 35, sy - 35, 70, 70))
 
     def draw_orders(self, pending_orders):
         if self.cfg.headless:
@@ -77,7 +78,7 @@ class UI:
                 pygame.draw.circle(self.screen, self.cfg.pending_color, (int(px[0]), int(px[1])), 5)
             else:
                 if self.delivery_img is not None:
-                    self.screen.blit(self.delivery_img, (px[0] - 10, px[1] - 10))
+                    self.screen.blit(self.delivery_img, (int(px[0]) - 10, int(px[1]) - 10))
                 else:
                     pygame.draw.circle(self.screen, (0, 180, 0), (int(px[0]), int(px[1])), 7, 2)
 
@@ -86,7 +87,7 @@ class UI:
             return
         for i, pos in enumerate(robots_pos):
             if self.robot_img is not None:
-                self.screen.blit(self.robot_img, (pos[0] - 15, pos[1] - 15))
+                self.screen.blit(self.robot_img, (int(pos[0]) - 15, int(pos[1]) - 15))
             else:
                 pygame.draw.circle(self.screen, (0, 0, 0), (int(pos[0]), int(pos[1])), 12, 2)
             label = f"R{i}"
