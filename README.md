@@ -10,6 +10,8 @@ This project models a realistic fulfillment loop:
 
 It supports multiple dispatch strategies (**MILP / Nearest-Neighbor / Greedy fallback**) and provides both visualization and experiment logs.
 
+https://github.com/user-attachments/assets/5b7dc59c-6c4b-4978-b575-e3caa308c351
+
 ---
 
 ## 🌍 Why this project matters
